@@ -31,9 +31,24 @@
 //}
 
 //Квадраты чисел от 1 до 10
-int count = 1;
-while(count <= 10)
+//int count = 1;
+//while(count <= 10)
+//{
+  //  Console.WriteLine($"{count} -> {count*count}");
+    //count++;
+//}
+
+// Показать все числа на [2; 128]
+// которые делятся на 3 и на 5
+int start = 2;
+int end = 128;
+int current = start;
+
+while(current <= end)
 {
-    Console.WriteLine($"{count} -> {count*count}");
-    count++;
+    if((current % 3 == 0) && (current % 5 == 0))
+    {
+        Console.WriteLine(current);
+    }
+    current++;
 }
