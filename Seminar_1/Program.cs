@@ -15,17 +15,25 @@
 //Console.WriteLine($"a = {a} b = {b}");
 
 //Задача на поиск максимального числа
-int a = new Random().Next(1, 100);
-int b = new Random().Next(1, 100);
-Console.WriteLine(a);
-Console.WriteLine(b);
-if(a>b)
+//int a = new Random().Next(1, 100);
+//int b = new Random().Next(1, 100);
+//Console.WriteLine(a);
+//Console.WriteLine(b);
+//if(a>b)
+//{
+  //  Console.Write("max = ");
+    //Console.WriteLine(a);
+//}
+//else
+//{
+  //  Console.Write("max = ");
+    //Console.WriteLine(b);
+//}
+
+//Квадраты чисел от 1 до 10
+int count = 1;
+while(count <= 10)
 {
-    Console.Write("max = ");
-    Console.WriteLine(a);
-}
-else
-{
-    Console.Write("max = ");
-    Console.WriteLine(b);
+    Console.WriteLine($"{count} -> {count*count}");
+    count++;
 }
