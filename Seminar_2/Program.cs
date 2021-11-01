@@ -20,6 +20,7 @@ void PrintResultX(double[] array)
     {
         if(possition == 0)
         {
+            Console.WriteLine("Ответ: ");
             Console.WriteLine($"x1 = {array[possition]}");
         }
         else
@@ -46,8 +47,6 @@ double c = double.Parse(Console.ReadLine());
 
 Console.WriteLine();
 
-
-
 double D = ResultD(b, a, c);
 
 if(D >= 0)
@@ -60,6 +59,7 @@ if(D >= 0)
     else
     {
         double Result = (-b + Math.Sqrt(D)) / (2 * a);
+        Console.WriteLine("Ответ: ");
         Console.WriteLine($"x = {Result}");
     }
 }
@@ -67,7 +67,6 @@ else
 {
     Console.WriteLine("Уравнение не имеет действительных корней");
 }
-
 
 /*if(D >= 0)
 {
@@ -79,4 +78,3 @@ else
 {
     Console.WriteLine("Уравнение не имеет действительных корней");
 }*/
-
