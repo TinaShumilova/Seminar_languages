@@ -19,15 +19,14 @@
 
 
 //0. Вывести квадрат числа
-Console.WriteLine("0. Вывести квадрат числа");
-
 int MyDouble(int n)
 {
     int b = n * n;
     return b;
 }
-
-Console.WriteLine(MyDouble(5));
+int fn = 5;
+Console.WriteLine($"0. Вывести квадрат числа {fn}");
+Console.WriteLine(MyDouble(fn));
 
 //1. По двум заданным числам проверять является ли первое квадратом второго
 
