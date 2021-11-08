@@ -336,6 +336,9 @@ Multiplicitu(m, n);
 //14. Найти третью цифру числа или сообщить, что её нет
 
 int tem = -899;
+
+Console.WriteLine($"Найти третью цифру числа {tem} или сообщить, что её нет");
+
 int ThirdNum(int coun)
 {
     int result = 0;
