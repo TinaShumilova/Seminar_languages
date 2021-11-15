@@ -206,12 +206,12 @@ PrintMyArray(newArray);
 Console.WriteLine();
 
 // 9. Показать последнюю цифру трёхзначного числа
-int hundred = 867;
+int hundred = 87;
 Console.WriteLine($"Показать последнюю цифру трёхзначного числа {hundred}");
 
 int FindeLast(int num)
 {
-    int o = -1;
+    int o = 0;
     if (num >= 100 && num < 1000)
     {
         o = num % 10;
@@ -223,27 +223,24 @@ int FindeLast(int num)
     return o;
 }
 
-void PrintAnswe(int nom)
+string PrintAnswe(int nom)
 {
-    int answer = FindeLast(nom);
-    if (answer == -1)
+    string answer = $"{FindeLast(nom)}";
+    if (nom <100 && nom > -100)
     {
-        Console.WriteLine("Неверно заданое число");
+        answer = "Неверно заданое число";
     }
-    else
-    {
-        Console.WriteLine(answer);
-    }
+    return answer;
 }
 
-PrintAnswe(hundred);
+Console.WriteLine(PrintAnswe(hundred));
 
 //10. Показать вторую цифру трёхзначного числа
 Console.WriteLine($"Показать вторую цифру трёхзначного числа {hundred}");
 
 int FindeSecond(int num)
 {
-    int o = -1;
+    int o = 0;
     if (num >= 100 && num < 1000)
     {
         o = (num % 100) / 10;
@@ -254,20 +251,17 @@ int FindeSecond(int num)
     }
     return o;
 }
-void PrintAnswer(int nom)
+string PrintAnswer(int nom)
 {
-    int answer = FindeSecond(nom);
-    if (answer == -1)
+    string answer = $"{FindeSecond(nom)}";
+    if (nom <100 && nom > -100)
     {
-        Console.WriteLine("Неверно заданое число");
+        answer = "Неверно заданое число";
     }
-    else
-    {
-        Console.WriteLine(answer);
-    }
+    return answer;
 }
 
-PrintAnswer(hundred);
+Console.WriteLine(PrintAnswer(hundred));
 
 //11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
 int min = 10;
@@ -303,34 +297,44 @@ int DelNum(int count)
     return count;
 }
 
+string PrintDel(int no)
+{
+    string answer = $"{DelNum(no)}";
+    if (no <100 && no > -100)
+    {
+        answer = "Неверно заданое число";
+    }
+    return answer;
+}
 
-int delSecNum = DelNum(hundred);
-Console.WriteLine(delSecNum);
+Console.WriteLine(PrintDel(hundred));
 
 //13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
-int m = 43;
+int m = 36;
 int n = 18;
 Console.WriteLine($"Кратно ли число {m} заданному {n}, если нет, вывести остаток");
-void Multiplicitu(int first, int second)
+string Multiplicitu(int first, int second)
 {
+    string text = String.Empty;
     if (first > second)
     {
         if (first % second == 0)
         {
-            Console.WriteLine($"Число {first} кратное числа {second}");
+            text = $"Число {first} кратное числа {second}";
         }
         else
         {
-            Console.WriteLine($"Остаток = {first % second}");
+            text = $"Остаток = {first % second}";
         }
     }
     else
     {
-        Console.WriteLine($"неверно заданы параметры чисел.");
+        text = $"неверно заданы параметры чисел.";
     }
+    return text;
 }
 
-Multiplicitu(m, n);
+Console.WriteLine(Multiplicitu(m, n));
 
 //14. Найти третью цифру числа или сообщить, что её нет
 
@@ -362,16 +366,18 @@ int ThirdNum(int coun)
     return result;
 }
 
-void PrintResult(int cou)
+string PrintResult(int cou)
 {
+    string answer = String.Empty;
     if(cou >= 100 || cou <= -100)
     {
-        Console.WriteLine(ThirdNum(cou));
+        answer = $"{ThirdNum(cou)}";
     }
     else
     {
-        Console.WriteLine("В заданном числе нет третьей цифры");
+        answer = "В заданном числе нет третьей цифры";
     }
+    return answer;
 }
 
-PrintResult(tem);
+Console.WriteLine(PrintResult(tem));
