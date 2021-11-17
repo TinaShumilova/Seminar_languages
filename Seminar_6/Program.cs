@@ -20,7 +20,34 @@ string PrintArray(int[] array)
     } 
     return text;
 }
+int NumSum(int[] array)
+{
+    int sumPos = 0;
+    int sumNeg = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] > 0)
+        {
+            sumPos = sumPos + array[i];
+        }
+        else
+        {
+            sumNeg = sumNeg + array[i];
+        }
+    }
+    return sumPos;
+    return sumNeg;
+}
+/*
+string PrintNumSum(int[] array)
+{
+    string answer = $"{NumSum(array)}";
+    if(NumSum(array) > 0)
+    {
 
+    }
+}
+*/
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
 int lenght = 8;
@@ -38,45 +65,24 @@ Console.WriteLine(PrintArray(secondArray));
 
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
 //Найти сумму положительных/отрицательных элементов массива
-/*
-int[] FillArray(int b, int firstNum, int lastNum)
-{
-    int[] array = new int[b];
-    for (int indeks = 0; indeks < array.Length; indeks++)
-    {
-        array[indeks] = new Random().Next(firstNum, lastNum + 1);
-    }
-    return array;
-}
-string PrintArray(int[] arr)
-{
-    string text = String.Empty;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        text = text + $"{arr[i]} ";
-    }
-    return text;
-}
-int NumSum(int[] massive)
-{
-    int sumPos = 0;
-    for (int i = 0; i < massive.Length; i++)
-    {
-        sumPos = sumPos + massive[i];
-    }
-    return sumPos;
-}
-
 int size = 12;
-int minNum = 0;
+int minNum = -9;
 int maxNum = 9;
 Console.WriteLine($"33. Задать массив из {size} элементов, заполненных числами"
                  + $" из [{minNum},{maxNum}].");
 
-int[] Arr = FillArray(size, minNum, maxNum);
-Console.WriteLine(PrintArray(Arr));
+int[] thirdArray = CreateNewArray(size);
+FillNewArray(thirdArray, minNum, maxNum);
+Console.WriteLine(PrintArray(thirdArray));
 Console.WriteLine("Найти сумму положительных элементов массива");
-Console.WriteLine(NumSum(Arr));
+Console.WriteLine(NumSum(thirdArray));
+
+
+
+/*
+
+
+
 
 
 // 34. Написать программу замену элементов массива на противоположные
