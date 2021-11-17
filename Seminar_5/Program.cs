@@ -113,19 +113,19 @@ double NumbersTresEven(int first, int l_num)
 {
     double tres = 0;
     double degree = 3;
-    while (first % 2 == 0 && first <= l_num)
+    while (first <= l_num) //// не работает если первое не чётное.
     {
-        for (double i = first; i <= l_num; i = i + 2)
+        if(first % 2 == 0) 
         {
             tres = Math.Pow(first, degree);
             Console.Write($"{tres} ");
-            first = first + 2;
         }
+        first++;
     }
     return tres;
 }
 
-int H = -2;
+int H = -5;
 int I = 10;
 Console.WriteLine($" 30. Кубы чисел от {H} до {I}, заканчивающихся на четную цифру");
 NumbersTresEven(H, I);
