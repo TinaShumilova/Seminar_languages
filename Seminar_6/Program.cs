@@ -46,7 +46,16 @@ int[] ChangeSimbol(int[] array)
     }
     return array;
 }
-
+string FindNumber(int[] annar, int find)
+{
+    string res = "Нет";
+    for (int index = 0; index < annar.Length; index++)
+    {
+        if (annar[index] == find)
+            res = "Да";
+    }
+    return res;
+}
 /*
 string PrintNumSum(int[] array)
 {
@@ -94,48 +103,19 @@ Console.WriteLine(PrintArray(fourghtArray));
 Console.WriteLine("Заменить элементы массива на противоположные");
 ChangeSimbol(fourghtArray);
 Console.WriteLine(PrintArray(fourghtArray));
-//=============противоположные чему? положительные на отрицательные? местоположение?
+
 // 35. Определить, присутствует ли в заданном массиве, некоторое число 
-/*
-int[] FillAnotherArray(int r, int min, int max)
-{
-    int[] array = new int[r];
-    for (int indeks = 0; indeks < array.Length; indeks++)
-    {
-        array[indeks] = new Random().Next(min, max + 1);
-
-    }
-    return array;
-}
-string PrintAnotherArray(int[] anarr)
-{
-    string text = String.Empty;
-    for (int i = 0; i < anarr.Length; i++)
-    {
-        text = text + $"{anarr[i]} ";
-    }
-    return text;
-}
-
-string FindNumber(int[] annar, int find)
-{
-    string res = "Нет";
-    for (int index = 0; index < annar.Length; index++)
-    {
-        if (annar[index] == find)
-            res = "Да";
-    }
-    return res;
-}
 Console.WriteLine("35. Задать массив");
-int[] anotherArray = FillAnotherArray(10, 0, 10);
-Console.WriteLine(PrintAnotherArray(anotherArray));
+int[] fifthArray = CreateNewArray(lenght);
+FillNewArray(fifthArray, minNum, maxNum);
+Console.WriteLine(PrintArray(fifthArray));
 int f = 8;
 Console.WriteLine($"Определить, присутствует ли в заданном массиве, число {f}?");
-Console.WriteLine(FindNumber(anotherArray, f));
+Console.WriteLine(FindNumber(fifthArray, f));
 
 // 36. Задать массив, заполнить случайными положительными трёхзначными числами. 
 // Показать количество нечетныхчетных чисел
+/*
 int[] FillNewArr(int s, int m, int mx)
 {
     int[] array = new int[s];
