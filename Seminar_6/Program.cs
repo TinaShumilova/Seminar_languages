@@ -71,15 +71,29 @@ int NumCount(int[] array)
 int FindNumber2(int[] array, int a, int b)
 {
     int count = 0;
-    for(int i = 0; i<array.Length;i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if(array[i]>=a && array[i]<=b)
+        if (array[i] >= a && array[i] <= b)
         {
             count++;
         }
     }
     return count;
 }
+string ParesMultipl(int[] array)
+{
+    string answer = String.Empty;
+    int multi = 1;
+    int last = array.Length - 1;
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        multi = array[i] * array[last];
+        answer = answer + $"{multi} ";
+        last--;
+    }
+    return answer;
+}
+
 /*
 string PrintNumSum(int[] array)
 {
@@ -162,7 +176,15 @@ Console.WriteLine($"Найти количество элементов из от
 Console.WriteLine(FindNumber2(seventhArray, A, B));
 
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
-// 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+// 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и 
+//последний элемент, второй и предпоследний и т.д.
+lenght = 11;
+Console.WriteLine($"39. Задать массив из {lenght} чисел");
+int[] ninethArray = CreateNewArray(lenght);
+FillNewArray(ninethArray, minNum, maxNum);
+Console.WriteLine(PrintArray(ninethArray));
+Console.WriteLine("Найти произведение пар чисел в одномерном массиве.");
+Console.WriteLine(ParesMultipl(ninethArray));
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
 
 
