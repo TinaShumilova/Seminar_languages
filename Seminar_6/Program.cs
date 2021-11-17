@@ -36,7 +36,7 @@ int NumSum(int[] array)
         }
     }
     return sumPos;
-    return sumNeg;
+    return sumNeg; // как вернуть оба значения?
 }
 int[] ChangeSimbol(int[] array)
 {
@@ -133,7 +133,12 @@ string PrintNumSum(int[] array)
     {
 
     }
+    else
+    {
+
+    }
 }
+//как вывести на консоль оба значения???
 */
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
