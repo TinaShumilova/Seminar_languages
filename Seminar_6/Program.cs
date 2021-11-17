@@ -3,6 +3,14 @@ int[] CreateNewArray(int a)
 {
     return new int[a];
 }
+int[] FillNewArray(int[] array, int minA, int maxB)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(minA, maxB +1);
+    }
+    return array;
+} 
 
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
