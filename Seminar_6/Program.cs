@@ -31,28 +31,10 @@ Console.WriteLine(PrintArray(firstArray));
 
 // 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их
 // на экран 
-/*
-==============================================================================
-int[][] FillNewArray(int a)
-{
-    int[][] array = new int[a][];
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = new int[8];
-        for (int j = 0; j < array[i].Length; j++)
-        {
-            array[i][j] = new Random().Next(0, 2);
-        }
-        Console.Write($"{array[i]} ");
-    }
-    return array;
-}
-*/
 Console.WriteLine($"32. Задать массив из {lenght} элементов и вывести их на экран");
 int[] secondArray = CreateNewArray(lenght);
 FillNewArray(secondArray, 0, 1);
 Console.WriteLine(PrintArray(secondArray));
-
 
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
 //Найти сумму положительных/отрицательных элементов массива
@@ -182,6 +164,47 @@ Console.WriteLine(NumCount(newArr));
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+
+
+/*
+//Задача 3, если в каждом элементе массива будет ещё массив
+=====================================================================================
+
+int[][] FillArray(int a, int b)
+{
+    int[][] array = new int[a][];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new int[b];
+        for (int j = 0; j < array[i].Length; j++)
+        {
+            array[i][j] = new Random().Next(0, 2);
+        }
+    }
+    return array;
+}
+
+int[][] newArray = FillArray(8, 8);
+
+string PrintNewArray(int[][] array)
+{
+    string text = String.Empty;
+    for(int index = 0; index < array.Length; index++)
+    {
+        string number = $"{array[index]}";
+        for(int i = 0; i< array[index].Length; i++)
+        {
+            number = number + $"{array[index][i]}";
+        }
+        
+        text = text + $"{number} ";
+    } 
+    return text;
+}
+Console.WriteLine(PrintNewArray(newArray));
+===================================================================================
+*/
+
 
 // Почувствуй себя лидом
 // 41. Выяснить являются ли три числа сторонами треугольника 
