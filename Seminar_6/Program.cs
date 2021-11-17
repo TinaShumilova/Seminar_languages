@@ -68,7 +68,18 @@ int NumCount(int[] array)
     }
     return count;
 }
-
+int FindNumber2(int[] array, int a, int b)
+{
+    int count = 0;
+    for(int i = 0; i<array.Length;i++)
+    {
+        if(array[i]>=a && array[i]<=b)
+        {
+            count++;
+        }
+    }
+    return count;
+}
 /*
 string PrintNumSum(int[] array)
 {
@@ -138,6 +149,18 @@ Console.WriteLine("Показать количество нечетных чис
 Console.WriteLine(NumCount(sixthArray));
 
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+lenght = 123;
+Console.WriteLine($"37. Задать массив из {lenght} чисел");
+int[] seventhArray = CreateNewArray(lenght);
+minNum = 0;
+maxNum = 999;
+FillNewArray(seventhArray, minNum, maxNum);
+Console.WriteLine(PrintArray(seventhArray));
+int A = 10;
+int B = 99;
+Console.WriteLine($"Найти количество элементов из отрезка [{A},{B}]");
+Console.WriteLine(FindNumber2(seventhArray, A, B));
+
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
