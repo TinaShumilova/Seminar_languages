@@ -47,12 +47,13 @@ int[][] FillNewArray(int a)
     }
     return array;
 }
-int lenght = 8;
-Console.WriteLine($"32. Задать массив из {lenght} элементов и вывести их на экран");
-FillNewArray(lenght);
-Console.WriteLine();
-====================================================================================
 */
+Console.WriteLine($"32. Задать массив из {lenght} элементов и вывести их на экран");
+int[] secondArray = CreateNewArray(lenght);
+FillNewArray(secondArray, 0, 1);
+Console.WriteLine(PrintArray(secondArray));
+
+
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
 //Найти сумму положительных/отрицательных элементов массива
 /*
