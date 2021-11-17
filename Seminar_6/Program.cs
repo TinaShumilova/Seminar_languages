@@ -5,19 +5,19 @@ int[] CreateNewArray(int a)
 }
 int[] FillNewArray(int[] array, int minA, int maxB)
 {
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(minA, maxB +1);
+        array[i] = new Random().Next(minA, maxB + 1);
     }
     return array;
-} 
+}
 string PrintArray(int[] array)
 {
     string text = String.Empty;
-    for(int index = 0; index < array.Length; index++)
+    for (int index = 0; index < array.Length; index++)
     {
         text = text + $"{array[index]} ";
-    } 
+    }
     return text;
 }
 int NumSum(int[] array)
@@ -26,7 +26,7 @@ int NumSum(int[] array)
     int sumNeg = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] > 0)
+        if (array[i] > 0)
         {
             sumPos = sumPos + array[i];
         }
@@ -38,6 +38,15 @@ int NumSum(int[] array)
     return sumPos;
     return sumNeg;
 }
+int[] ChangeSimbol(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = array[i] * -1;
+    }
+    return array;
+}
+
 /*
 string PrintNumSum(int[] array)
 {
@@ -65,30 +74,29 @@ Console.WriteLine(PrintArray(secondArray));
 
 // 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
 //Найти сумму положительных/отрицательных элементов массива
-int size = 12;
+lenght = 12;
 int minNum = -9;
 int maxNum = 9;
-Console.WriteLine($"33. Задать массив из {size} элементов, заполненных числами"
+Console.WriteLine($"33. Задать массив из {lenght} элементов, заполненных числами"
                  + $" из [{minNum},{maxNum}].");
 
-int[] thirdArray = CreateNewArray(size);
+int[] thirdArray = CreateNewArray(lenght);
 FillNewArray(thirdArray, minNum, maxNum);
 Console.WriteLine(PrintArray(thirdArray));
 Console.WriteLine("Найти сумму положительных элементов массива");
 Console.WriteLine(NumSum(thirdArray));
 
-
-
-/*
-
-
-
-
-
 // 34. Написать программу замену элементов массива на противоположные
+Console.WriteLine($"33. Задать массив из {lenght} элементов.");
+int[] fourghtArray = CreateNewArray(lenght);
+FillNewArray(fourghtArray, minNum, maxNum);
+Console.WriteLine(PrintArray(fourghtArray));
+Console.WriteLine("Заменить элементы массива на противоположные");
+ChangeSimbol(fourghtArray);
+Console.WriteLine(PrintArray(fourghtArray));
 //=============противоположные чему? положительные на отрицательные? местоположение?
 // 35. Определить, присутствует ли в заданном массиве, некоторое число 
-
+/*
 int[] FillAnotherArray(int r, int min, int max)
 {
     int[] array = new int[r];
