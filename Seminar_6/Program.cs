@@ -93,7 +93,38 @@ string ParesMultipl(int[] array)
     }
     return answer;
 }
-
+double[] FillRArray(int a)
+{
+    double[] array = new double[a];
+    for(int i=0;i<a;i++)
+    {
+        array[i] = new Random().NextDouble();
+    }
+    return array;
+}
+string PrintRArray(double[] array)
+{
+    string text = String.Empty;
+    for (int index = 0; index < array.Length; index++)
+    {
+        text = text + $"{array[index]} ";
+    }
+    return text;
+}
+double FindDiff(double[] array)
+{
+    double max = array[0];
+    double min = array[0];
+    for(int i =1; i<array.Length;i++)
+    {
+        if(array[i]>max) max = array[i];
+    }
+    for(int i =1; i<array.Length;i++)
+    {
+        if(array[i]<min) min = array[i];
+    }
+    return max-min;
+}
 /*
 string PrintNumSum(int[] array)
 {
@@ -186,10 +217,13 @@ Console.WriteLine(PrintArray(ninethArray));
 Console.WriteLine("Найти произведение пар чисел в одномерном массиве.");
 Console.WriteLine(ParesMultipl(ninethArray));
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
-
-
+Console.WriteLine($"40. Задать массив из {lenght} вещественныхчисел");
+double[] tenthArray = FillRArray(lenght);
+Console.WriteLine(PrintRArray(tenthArray));
+Console.WriteLine("Найти разницу между максимальным и минимальным элементом");
+Console.WriteLine(FindDiff(tenthArray));
 /*
-//Задача 3, если в каждом элементе массива будет ещё массив
+//Задача 32, если в каждом элементе массива будет ещё массив
 =====================================================================================
 
 int[][] FillArray(int a, int b)
