@@ -12,12 +12,22 @@ int[] FillNewArray(int[] array, int minA, int maxB)
     return array;
 } 
 
+string PrintArray(int[] array)
+{
+    string text = String.Empty;
+    for(int index = 0; index < array.Length; index++)
+    {
+        text = text + $"{array[index]} ";
+    } 
+    return text;
+}
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
 int lenght = 8;
 Console.WriteLine($"31. Задать массив из {lenght} элементов и вывести их на экран");
 int[] firstArray = CreateNewArray(lenght);
-
+FillNewArray(firstArray, -10, 10);
+Console.WriteLine(PrintArray(firstArray));
 /*
 FillNewArray(lenght);
 Console.WriteLine();
