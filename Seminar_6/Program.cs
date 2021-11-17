@@ -11,7 +11,6 @@ int[] FillNewArray(int[] array, int minA, int maxB)
     }
     return array;
 } 
-
 string PrintArray(int[] array)
 {
     string text = String.Empty;
@@ -21,6 +20,7 @@ string PrintArray(int[] array)
     } 
     return text;
 }
+
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
 int lenght = 8;
@@ -28,9 +28,6 @@ Console.WriteLine($"31. Задать массив из {lenght} элементо
 int[] firstArray = CreateNewArray(lenght);
 FillNewArray(firstArray, -10, 10);
 Console.WriteLine(PrintArray(firstArray));
-/*
-FillNewArray(lenght);
-Console.WriteLine();
 
 // 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их
 // на экран 
