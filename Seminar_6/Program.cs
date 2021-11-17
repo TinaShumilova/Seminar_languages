@@ -56,6 +56,19 @@ string FindNumber(int[] annar, int find)
     }
     return res;
 }
+int NumCount(int[] array)
+{
+    int count = 0;
+    for (int index = 0; index < array.Length; index++)
+    {
+        if (array[index] % 2 != 0)
+        {
+            count = count + 1;
+        }
+    }
+    return count;
+}
+
 /*
 string PrintNumSum(int[] array)
 {
@@ -114,46 +127,16 @@ Console.WriteLine($"Определить, присутствует ли в за�
 Console.WriteLine(FindNumber(fifthArray, f));
 
 // 36. Задать массив, заполнить случайными положительными трёхзначными числами. 
-// Показать количество нечетныхчетных чисел
-/*
-int[] FillNewArr(int s, int m, int mx)
-{
-    int[] array = new int[s];
-    for (int index = 0; index < s; index++)
-    {
-        array[index] = new Random().Next(m, mx + 1);
-    }
-    return array;
-}
-string PrintNewArr(int[] arr)
-{
-    string result = $"{arr[0]} ";
-    for (int index = 1; index < arr.Length; index++)
-    {
-        result = result + $"{arr[index]} ";
-    }
-    return result;
-}
-
-int NumCount(int[] array)
-{
-    int count = 0;
-    for (int index = 0; index < array.Length; index++)
-    {
-        if (array[index] % 2 != 0)
-        {
-            count = count + 1;
-        }
-    }
-    return count;
-}
-
+// Показать количество нечетных/четных чисел
 Console.WriteLine("36. Задать массив, заполнить случайными положительными трёхзначными числами.");
-int[] newArr = FillNewArr(10, 100, 999);
-Console.WriteLine(PrintNewArr(newArr));
-Console.WriteLine("Показать количество нечетныхчетных чисел");
-Console.WriteLine(NumCount(newArr));
-*/
+int[] sixthArray = CreateNewArray(lenght);
+minNum = 100;
+maxNum = 999;
+FillNewArray(sixthArray, minNum, maxNum);
+Console.WriteLine(PrintArray(sixthArray));
+Console.WriteLine("Показать количество нечетных чисел");
+Console.WriteLine(NumCount(sixthArray));
+
 // 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
