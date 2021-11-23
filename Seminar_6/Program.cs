@@ -20,7 +20,7 @@ string PrintArray(int[] array)
     }
     return text;
 }
-int NumSum(int[] array)
+(int, int) NumSum(int[] array)
 {
     int sumPos = 0;
     int sumNeg = 0;
@@ -35,8 +35,8 @@ int NumSum(int[] array)
             sumNeg = sumNeg + array[i];
         }
     }
-    return sumPos;
-    return sumNeg; // как вернуть оба значения?
+    return (sumPos, sumNeg);
+     // как вернуть оба значения?
 }
 int[] ChangeSimbol(int[] array)
 {
@@ -125,21 +125,16 @@ double FindDiff(double[] array)
     }
     return max-min;
 }
-/*
-string PrintNumSum(int[] array)
+int SumIndex(int[] array)
 {
-    string answer = $"{NumSum(array)}";
-    if(NumSum(array) > 0)
+    int sum = 0;
+    for (int i = 0; i < array.Length; i = i + 2)
     {
-
+        sum = sum + array[i];
     }
-    else
-    {
-
-    }
+    return sum;
 }
-//как вывести на консоль оба значения???
-*/
+
 // 31. Задать массив из 8 элементов и вывести их на экран 
 
 int lenght = 8;
@@ -167,7 +162,8 @@ int[] thirdArray = CreateNewArray(lenght);
 FillNewArray(thirdArray, minNum, maxNum);
 Console.WriteLine(PrintArray(thirdArray));
 Console.WriteLine("Найти сумму положительных элементов массива");
-Console.WriteLine(NumSum(thirdArray));
+(int positiv, int negative) temp = NumSum(thirdArray);
+Console.WriteLine(temp.positiv);
 
 // 34. Написать программу замену элементов массива на противоположные
 Console.WriteLine($"33. Задать массив из {lenght} элементов.");
@@ -191,7 +187,7 @@ Console.WriteLine(FindNumber(fifthArray, f));
 // Показать количество нечетных/четных чисел
 Console.WriteLine("36. Задать массив, заполнить случайными положительными трёхзначными числами.");
 int[] sixthArray = CreateNewArray(lenght);
-minNum = 100;
+minNum = -100;
 maxNum = 999;
 FillNewArray(sixthArray, minNum, maxNum);
 Console.WriteLine(PrintArray(sixthArray));
@@ -212,6 +208,12 @@ Console.WriteLine($"Найти количество элементов из от
 Console.WriteLine(FindNumber2(seventhArray, A, B));
 
 // 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
+lenght = 10;
+int[] eighthArray = CreateNewArray(10);
+FillNewArray(eighthArray, -10, 10);
+Console.WriteLine(PrintArray(eighthArray));
+Console.WriteLine(SumIndex(eighthArray));
+
 // 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и 
 //последний элемент, второй и предпоследний и т.д.
 lenght = 11;
