@@ -56,6 +56,32 @@ int count(int[] array)
     double Y = k2 * X + b2;
     return (X, Y);
 }
+
+int[] Fibbonachi(int a, int b, int lenght)
+{
+    int[] array = new int[lenght];
+    array[0] = a;
+    array[1] = b;
+    for (int i = 2; i < array.Length; i++)
+    {
+        array[i] = array[i-1] + array[i-2];
+    }
+    return array;
+}
+
+string PrintArray(int[] array)
+{
+    string text = String.Empty;
+    for (int i = 0; i < array.Length; i++)
+    {
+        text = text + $"{array[i]} ";
+    }
+    return text;
+}
+
+===================================================================================
+==================================================================================
+===================================================================================
 */
 // Почувствуй себя лидом
 // 41. Выяснить являются ли три числа сторонами треугольника 
@@ -120,28 +146,9 @@ Console.WriteLine(FindXY(k1, b1, k2, b2));
 
 // 45. Показать числа Фибоначчи
 //a, b, c = a+b
-int[] Fibbonachi(int a, int b, int lenght)
-{
-    int[] array = new int[lenght];
-    array[0] = a;
-    array[1] = b;
-    for (int i = 2; i < array.Length; i++)
-    {
-        array[i] = array[i-1] + array[i-2];
-    }
-    return array;
-}
-string PrintArray(int[] array)
-{
-    string text = String.Empty;
-    for (int i = 0; i < array.Length; i++)
-    {
-        text = text + $"{array[i]} ";
-    }
-    return text;
-}
-int[] Fibo = Fibbonachi(0, 1, 10);
+/*int[] Fibo = Fibbonachi(0, 1, 10);
 Console.WriteLine(PrintArray(Fibo));
+*/
 // 46. Написать программу масштабирования фигуры
 /*===============================================
 Тут для тех кто далеко улетел, чтобы задавались вершины фигуры списком (одной строкой)
