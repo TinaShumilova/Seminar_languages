@@ -64,6 +64,47 @@ int[,] ReplaceEvenNumbers(int[,] array)
     return array;
 }
 
+int[,] FillMultidimensionalArrayWithIndexSum(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = i + j;
+        }
+    }
+    return array;
+}
+
+int[,] ReplaceNumbersWithEvenIndexesWithItSquare(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i % 2 == 0 && j % 2 == 0) array[i, j] = array[i, j] * array[i, j];
+        }
+    }
+    return array;
+}
+
+int[,] FillMultidimensionalArrayWithUserCorrections(int[,] array, int minNumber, int maxNumber)
+{
+    int a = new Random().Next(0, array.GetLength(0));
+    int b = new Random().Next(0, array.GetLength(1));
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == a && j == b)
+            {
+                array[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+            else array[i, j] = new Random().Next(minNumber, maxNumber + 1);
+        }
+    }
+    return array;
+}
 
 // 48. Показать двумерный массив размером m×n заполненный целыми числами
 
@@ -105,7 +146,57 @@ void TestTask50()
     PrintMultidimensionalArray(testArray);
 }
 
+//51. Задать двумерный массив следующим правилом: A[m,n]=m+n
+
+void TestTask51()
+{
+    int a = 3;
+    int b = 4;
+    int[,] testArray = CreateMultidimensionalArray(a, b);
+    FillMultidimensionalArrayWithIndexSum(testArray);
+    PrintMultidimensionalArray(testArray);
+}
+
+//52. В двумерном массиве заменить элементы, у которых оба индекса чётные 
+//на их квадраты
+
+void TestTask52()
+{
+    int a = 3;
+    int b = 4;
+    int min = 0;
+    int max = 10;
+    int[,] testArray = CreateMultidimensionalArray(a, b);
+    FillMultidimensionalArray(testArray, min, max);
+    PrintMultidimensionalArray(testArray);
+    Console.WriteLine();
+    ReplaceNumbersWithEvenIndexesWithItSquare(testArray);
+    PrintMultidimensionalArray(testArray);
+}
+
+//53. В двумерном массиве показать позиции числа, заданного пользователем 
+//или указать, что такого элемента нет
+(int, int) FindPossition(int[] array)
+{
+    
+    return(,);
+}
+
+void TestTask53()
+{
+    int a = 3;
+    int b = 4;
+    int min = 0;
+    int max = 10;
+    int[,] testArray = CreateMultidimensionalArray(a, b);
+    FillMultidimensionalArrayWithUserCorrections(testArray, min, max);
+    PrintMultidimensionalArray(testArray);
+}
+
 //Тест кода
 //TestTask48();
 //TestTask49();
 //TestTask50();
+//TestTask51();
+//TestTask52();
+TestTask53();
