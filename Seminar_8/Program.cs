@@ -33,6 +33,7 @@ int[] FillArFromTex(int[] arr, string tx)
     }
     return arr;
 }
+*/
 string PrintArray(int[] array)
 {
     string text = String.Empty;
@@ -42,6 +43,7 @@ string PrintArray(int[] array)
     }
     return text;
 }
+/*
 int count(int[] array)
 {
     int count = 0;
@@ -174,3 +176,17 @@ Console.WriteLine(newCoordinates);
 ================================================*/
 // 47. Написать программу копирования массива
 
+int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int[] CopyArray(int[] array)
+{
+    int[] array2 = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array2[i]=array[i];
+    }
+    return array2;
+}
+
+Console.WriteLine(PrintArray(array));
+int[] array2 = CopyArray(array);
+Console.WriteLine(PrintArray(array2));
