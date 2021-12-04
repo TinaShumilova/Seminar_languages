@@ -1,4 +1,5 @@
-﻿/*bool Tripl(int a, int b, int c)
+﻿/*
+bool Tripl(int a, int b, int c)
 {
     return ((a + b > c) && (a + c > b) && (c + b > a));
 }
@@ -69,20 +70,8 @@ int[] Fibbonachi(int a, int b, int lenght)
     return array;
 }
 
-string PrintArray(int[] array)
-{
-    string text = String.Empty;
-    for (int i = 0; i < array.Length; i++)
-    {
-        text = text + $"{array[i]} ";
-    }
-    return text;
-}
-
-===================================================================================
-==================================================================================
-===================================================================================
 */
+
 // Почувствуй себя лидом
 // 41. Выяснить являются ли три числа сторонами треугольника 
 /*
@@ -102,33 +91,21 @@ Console.WriteLine(count(ArrayT));
 */
 // 43. Написать программу преобразования десятичного числа в двоичное
 /*
-===================================================================================
-===================================================================================
-==================================================================================
-int num = 44;
+int num = GetNumber();
 string ConvToDouble(int number)
 {
     string temp = String.Empty;
-    while(number/2 != 0)
+    while (number != 0)
     {
-        if(number%2==0)
-        {
-            temp = "0" + temp;
-            number = number/2;
-        }
-        else
-        {
-            temp = "1" + temp;
-            number = number/2;
-        }
-        
+        if (number % 2 == 0) temp = "0" + temp;
+        else temp = "1" + temp;
+        number = number / 2;
     }
     return temp;
 }
-Console.WriteLine(ConvToDouble(num));
-===================================================================================
-===================================================================================
-===================================================================================*/
+string number = ConvToDouble(num);
+Console.WriteLine(number);
+*/
 
 
 // 44. Найти точку пересечения двух прямых заданных уравнением 
@@ -136,10 +113,10 @@ Console.WriteLine(ConvToDouble(num));
 // y = k2 * x + b2, 
 // b1 k1 и b2 и k2 заданы
 /*
-double b1 = -1;
-double k1 = 2;
+double b1 = 0;
+double k1 = 1;
 double b2 = 1;
-double k2 = -3;
+double k2 = 0;
 
 Console.WriteLine(FindXY(k1, b1, k2, b2));
 */
@@ -150,6 +127,44 @@ Console.WriteLine(FindXY(k1, b1, k2, b2));
 Console.WriteLine(PrintArray(Fibo));
 */
 // 46. Написать программу масштабирования фигуры
+/*
+int GetNumber()
+{
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+double Coefficient()
+{
+    Console.WriteLine("Введите коэффициент масштабирования. ");
+    return GetNumber();
+}
+
+string ResultOfScale(string text, double number)
+{
+    string result = String.Empty;
+    double temp = 0;
+    for (int i = 0; i < text.Length; i++)
+    {
+        if (text[i] == '(' || text[i] == ',' || text[i] == ')' || text[i] == ' ')
+        {
+            result = result + text[i];
+        }
+        else
+        {
+            temp = Convert.ToInt32($"{text[i]}");
+            temp = temp * number;
+            result = result + $"{Convert.ToString(temp)}";
+            temp = 0;
+        }
+    }
+    return result;
+}
+string coordinates = "(0,0) (2,0) (2,2) (0,2)";
+Console.WriteLine(coordinates);
+double coef = Coefficient();
+string newCoordinates = ResultOfScale(coordinates, coef);
+Console.WriteLine(newCoordinates);
+*/
 /*===============================================
 Тут для тех кто далеко улетел, чтобы задавались вершины фигуры списком (одной строкой)
 например: "(0,0) (2,0) (2,2) (0,2)"
@@ -158,3 +173,4 @@ Console.WriteLine(PrintArray(Fibo));
 при k = 2 получаем "(0,0) (4,0) (4,4) (0,4)"
 ================================================*/
 // 47. Написать программу копирования массива
+
